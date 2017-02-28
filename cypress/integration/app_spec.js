@@ -6,16 +6,16 @@ describe('initial page load', function() {
         cy.visit('http://localhost:3000')
     })
 
-    it('should load page', function() {
-        cy.request({
-            url: '/movies', followRedirect: false
-        }).then(function(response) {
-            expect(response.status).to.eq(200)
+    it('should redirect to user signup/login', function() {
+        cy.request({ url: '/', followRedirect: false })
+            .then(function(response) {
+            expect(response.status).to.eq(302)
         })
+
+        cy.location().its('pathname').should('eq', "/users/sign_in")
     })
 
     it('should have correct title', function () {
-        cy.visit('http://localhost:3000')
         cy.title().should('include', 'Movies: Rails')
     })
 })
