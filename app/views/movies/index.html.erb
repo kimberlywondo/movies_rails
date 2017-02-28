@@ -1,4 +1,5 @@
-<h1>Yaaas honey</h1>
 <% @movies.each do |movie| %>
     <h2><%= movie.title %></h2>
+    <h3><%= movie.genre %> (<%= movie.rated %>)</h3>
+    <%= link_to "Movie", movie %>
 <% end %>
