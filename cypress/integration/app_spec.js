@@ -14,6 +14,7 @@ describe('initial page load', function() {
             .then(function(response) {
             expect(response.status).to.eq(302)
         })
+        // without login, should redirect to user path
         cy.location().its('pathname').should('contain', "/users")
     })
 })
