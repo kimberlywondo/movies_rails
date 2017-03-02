@@ -1,4 +1,10 @@
+require 'httparty'
+require 'open-uri'
+
 class MoviesController < ApplicationController
+  # allows for auth. bypass for dev environment
+  skip_before_filter :verify_authenticity_token
+
   def index
     @movies = Movie.all
   end
@@ -14,5 +20,6 @@ class MoviesController < ApplicationController
   end
 
   def results
+    @string = params[:title]
   end
 end
