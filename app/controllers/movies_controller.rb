@@ -20,6 +20,6 @@ class MoviesController < ApplicationController
   end
 
   def results
-    @string = params[:title]
+    @movie_results = HTTParty.get("http://www.omdbapi.com/?t=#{params[:title]}&plot=short&r=json").parsed_response
   end
 end
