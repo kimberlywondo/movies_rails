@@ -25,14 +25,24 @@ describe('login attempts', function() {
     })
 
     it('should fail log in with incorrect credentials', function() {
-        cy.location().its('pathname').should('contain', "/users")
         cy.get('#user_email').type('fail@test.com')
             .get('#user_password').type('fail123{enter}')
     })
 
     it('should log in successfully with correct credentials', function() {
-        cy.location().its('pathname').should('contain', "/users")
         cy.get('#user_email').type('dupper.john@gmail.com')
             .get('#user_password').type('test123{enter}')
+    })
+})
+
+describe('search', function() {
+    beforeEach(function() {
+        cy.visit('/users/sign_in')
+        cy.get('#user_email').type('dupper.john@gmail.com')
+            .get('#user_password').type('test123{enter}')
+    })
+
+    it('should go to search page', function() {
+        cy.visit('/search')
     })
 })
