@@ -45,4 +45,9 @@ describe('search', function() {
     it('should go to search page', function() {
         cy.visit('/search')
     })
+
+    it('should perform a search', function() {
+        cy.visit('/search')
+        cy.get('#form_input').type('the matrix{enter}')
+    })
 })
