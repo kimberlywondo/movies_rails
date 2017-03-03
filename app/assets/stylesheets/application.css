@@ -22,17 +22,17 @@ body {
     /*margin-bottom: 0;*/
 /*}*/
 
-.nav-user {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-}
+/*.nav-user {*/
+    /*display: inline-block;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
 
-@media (max-width: 770px) {
-    div.navbar.navbar-right.nav-user {
-        color: white;
-    }
-    div.navbar.navbar-right.nav-user strong {
-        clear: right;
-    }
-}
+/*@media (max-width: 770px) {*/
+    /*div.navbar.navbar-right.nav-user {*/
+        /*color: white;*/
+    /*}*/
+    /*div.navbar.navbar-right.nav-user strong {*/
+        /*clear: right;*/
+    /*}*/
+/*}*/
