@@ -1,1 +1,18 @@
-<h1><%= @movie_results["Title"] %></h1>
+<p><%= @movie_results %></p>
+<ul>
+  <li><%= @movie_results["Title"] %></li>
+  <li><%= @movie_results["Year"] %></li>
+  <li><%= @movie_results["Rated"] %></li>
+  <li><%= @movie_results["Released"] %></li>
+  <li><%= @movie_results["Runtime"] %></li>
+  <li><%= @movie_results["Genre"] %></li>
+  <li><%= @movie_results["Director"] %></li>
+  <li><%= @movie_results["Writer"] %></li>
+  <li><%= @movie_results["Actors"] %></li>
+  <li><%= @movie_results["Plot"] %></li>
+  <li><%= @movie_results["Country"] %></li>
+  <li><%= @movie_results["Awards"] %></li>
+  <li><img src="<%= @movie_results["Poster"] %>" alt=""></li>
+  <li><%= @movie_results["Metascore"] %></li>
+  <li><%= @movie_results["imdbRating"] %></li>
+</ul>

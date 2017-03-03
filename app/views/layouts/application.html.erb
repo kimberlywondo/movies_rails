@@ -23,7 +23,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Movies: Rails</a>
+        <a class="navbar-brand" href="/">Movies: Rails</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -31,39 +31,29 @@
           <li><a href="/search">Search</a></li>
           <li><a href="/results">Results</a></li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
+          <% if notice %>
+              <li class="navbar-link"><a><%= notice %></a></li>
+          <% end %>
+          <% if alert %>
+              <li class="navbar-link"><a><%= alert %></a></li>
+          <% end %>
+
           <% if user_signed_in? %>
               <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
           <% else %>
               <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
               <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-
-
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
 
-
-
-
-
-
-
-
-
-
-  <% if notice %>
-      <p class="notice"><%= notice %></p>
-  <% end %>
-
-  <% if alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
-
   <%= yield %>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
           integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
