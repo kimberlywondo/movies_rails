@@ -10,7 +10,8 @@ Movie.create(
   plot: 'An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more.',
   awards: 'Nominated for 1 Oscar. Another 10 wins & 31 nominations.',
   poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzc1YmU2ZjEtYWIwMC00ZjM3LWI0NTctMDVlNGQ3YmYwMzE5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
-rating: '8.8'
+  rating: '8.8',
+  user_id: 1
 )
 
 Movie.create(
@@ -25,5 +26,6 @@ Movie.create(
   plot: 'A jazz pianist falls for an aspiring actress in Los Angeles.',
   awards: 'Nominated for 14 Oscars. Another 153 wins & 204 nominations.',
   poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_SX300.jpg',
-  rating: '8.5'
+  rating: '8.5',
+  user_id: 1
 )
