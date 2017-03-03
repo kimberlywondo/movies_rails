@@ -1,13 +1,18 @@
-<% @movies.each do |movie| %>
-    <h1><%= movie.title  %> <small><%= movie.year %></small></h1>
-    <h3><%= movie.genre %> (<%= movie.rated %>)</h3>
-    <img src="<%= movie.poster %>" alt="">
-    <p><%= movie.awards %></p>
-    <br>
-    <%= link_to "Movie", movie %>
-<% end %>
-
-
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <% @movies.each do |movie| %>
+    <div class="thumbnail">
+      <img src="<%= movie.poster %>" alt="">
+      <div class="caption">
+        <h3><%= movie.title %> <small><%= movie.year %></small></h3>
+        <p><%= movie.plot %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+      <%= link_to "Movie", movie %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <!--t.string   "title"-->
 <!--t.string   "year"-->
