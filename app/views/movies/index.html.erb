@@ -1,5 +1,24 @@
 <% @movies.each do |movie| %>
     <h2><%= movie.title %></h2>
     <h3><%= movie.genre %> (<%= movie.rated %>)</h3>
+    <img src="<%= movie.poster %>" alt="">
     <%= link_to "Movie", movie %>
 <% end %>
+
+
+
+<!--t.string   "title"-->
+<!--t.string   "year"-->
+<!--t.string   "rated"-->
+<!--t.string   "runtime"-->
+<!--t.string   "genre"-->
+<!--t.string   "director"-->
+<!--t.string   "writer"-->
+<!--t.string   "actors"-->
+<!--t.string   "plot"-->
+<!--t.string   "awards"-->
+<!--t.string   "poster"-->
+<!--t.string   "rating"-->
+<!--t.datetime "created_at", null: false-->
+<!--t.datetime "updated_at", null: false-->
+<!--t.integer  "user_id"-->
