@@ -1,3 +1,5 @@
 <h2><%= @movie.title %></h2>
 <h3><%= @movie.genre %> (<%= @movie.rated %>)</h3>
+<img src="<%= @movie.poster %>" alt="<%= @movie.title %>">
+<p><%= @movie.plot %></p>
 <%= link_to "All Movies", movies_path %>

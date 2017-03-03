@@ -13,12 +13,9 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by_id(params[:id])
   end
 
-
-
   def new
     @movie = Movie.new
   end
-
 
   def create
     @movie = Movie.create(movie_params)
@@ -44,12 +41,10 @@ class MoviesController < ApplicationController
   end
 
 
-
-
   private
   def movie_params
     params.permit(:title, :rated, :released, :runtime, :genre,
-                                  :director, :writer, :actors, :plot, :country,
-                                  :awards, :poster, :metascore, :imdbRating, :user_id)
+                  :director, :writer, :actors, :plot, :country,
+                  :awards, :poster, :metascore, :imdbRating, :user_id)
   end
 end
