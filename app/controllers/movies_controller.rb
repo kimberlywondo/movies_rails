@@ -20,6 +20,10 @@ class MoviesController < ApplicationController
   end
 
   def results
-    @movie_results = HTTParty.get("http://www.omdbapi.com/?t=#{params[:title]}&plot=long&r=json")
+    api_result = HTTParty.get("http://www.omdbapi.com/?t=#{params[:title]}&plot=long&r=json")
+    if !api_result["Title"]
+      redirect_to "/search"
+    end
+    @movie_results = api_result
   end
 end

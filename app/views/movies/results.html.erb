@@ -1,7 +1,7 @@
 <% if !@movie_results["Title"] %>
     <h1>Please search for a movie!</h1>
 <% else %>
-    <ul>
+    <ul class="search-results-list">
       <li><h1><%= @movie_results["Title"] %> <small><%= @movie_results["Year"] %></small></h1></li>
       <li><%= @movie_results["Rated"] %></li>
       <li><%= @movie_results["Released"] %></li>
