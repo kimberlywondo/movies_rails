@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @movie = Movie.new
+    @movie = Movie.new(params[:movie])
   end
 
   def create
@@ -24,9 +24,6 @@ class MoviesController < ApplicationController
     else
       render :search
     end
-  end
-
-  def edit
   end
 
   def search
