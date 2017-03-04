@@ -19,6 +19,8 @@
       <input type="hidden" name="poster" value="<%= @movie_results["Poster"] %>">
       <input type="hidden" name="rating" value="<%= @movie_results["Rating"] %>">
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
+      <input type="hidden" name="favorites" value="true">
+      <input type="hidden" name="watch" value="false">
 
       <input type="submit" value="Add to Favorites">
     </form>
@@ -38,6 +40,8 @@
       <input type="hidden" name="poster" value="<%= @movie_results["Poster"] %>">
       <input type="hidden" name="rating" value="<%= @movie_results["Rating"] %>">
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
+      <input type="hidden" name="favorites" value="false">
+      <input type="hidden" name="watch" value="true">
 
       <input type="submit" value="Add to Watch List">
     </form>
