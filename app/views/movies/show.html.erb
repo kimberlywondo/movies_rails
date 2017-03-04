@@ -5,7 +5,8 @@
           <div class="caption">
             <h3><%= @movie.title %> <small><%= @movie.year %></small></h3>
             <p><%= @movie.plot %></p>
-            <p><a href="/movies" class="btn btn-primary" role="button">All Favorites</a></p>
+            <p><a href="/movies" class="btn btn-primary" role="button">All Favorites</a>
+              <a href="/movies/remove/<%= @movie.id %>" class="btn btn-danger" role="button">Remove from Favorites</a></p>
           </div>
         </div>
   </div>
