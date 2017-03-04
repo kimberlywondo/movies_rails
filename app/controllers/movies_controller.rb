@@ -3,10 +3,10 @@ require 'open-uri'
 
 class MoviesController < ApplicationController
   # allows for auth. bypass for dev environment
-  skip_before_filter :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   def index
-    @movies = Movie.where(user_id: current_user.id)
+    @movies = Movie.where(user_id: current_user.id).where(favorites: true)
   end
 
   def show
@@ -42,6 +42,7 @@ class MoviesController < ApplicationController
   def movie_params
     params.permit(:title, :rated, :released, :runtime, :genre,
                   :director, :writer, :actors, :plot, :country,
-                  :awards, :poster, :metascore, :imdbRating, :user_id)
+                  :awards, :poster, :metascore, :imdbRating,
+                  :user_id, :favorites, :watch)
   end
 end
