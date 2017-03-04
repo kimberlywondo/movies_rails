@@ -23,6 +23,12 @@ class WatchController < ApplicationController
     end
   end
 
+  def remove
+    @movie = Movie.find(params[:id])
+    if @movie.destroy
+      redirect_to "/watch"
+    end
+  end
 
   private
   def movie_params

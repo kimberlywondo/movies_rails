@@ -26,6 +26,13 @@ class MoviesController < ApplicationController
     end
   end
 
+  def remove
+    @movie = Movie.find(params[:id])
+    if @movie.destroy
+      redirect_to "/movies"
+    end
+  end
+
   def search
   end
 
