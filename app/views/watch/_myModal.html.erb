@@ -1,0 +1,40 @@
+<button type="button" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">
+  MODAL
+</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="movie-show-container">
+          <h4 id="movie-title"><%= @movie.title %></h4>
+          <img src="<%= @movie.poster %>" alt="">
+          <div class="movie-deets">
+            <span><%= @movie.year %></span>
+            <span><%= @movie.rated %></span>
+            <span><%= @movie.runtime %></span>
+            <h4><%= @movie.genre %></h4>
+            <h4><%= @movie.plot %></h4>
+            <h4>Directed by: <%= @movie.director %></h4>
+            <h4>Written by: <%= @movie.writer %></h4>
+            <h4>Cast: <%= @movie.actors %></h4>
+            <h4><%= @movie.awards %></h4>
+          </div>
+          <div class="movie-show-btn">
+            <p><a href="/watch" class="btn btn-primary" role="button">All Movies</a>
+              <a href="/watch/remove/<%= @movie.id %>" class="btn btn-danger" role="button">Remove Movie</a></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :watch
   get '/watch/remove/:id', to: 'watch#remove'
+  # test partial
+  get '/watch/test', to: 'watch#test'
 
   get  '/search',  to: 'movies#search'
   post '/results', to: 'movies#results'
