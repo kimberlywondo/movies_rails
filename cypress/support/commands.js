@@ -56,4 +56,8 @@ Cypress.addParentCommand('login', function(email, password) {
         .get('#user_email', { log: false }).type(email, { log: false })
         .get('#user_password', { log: false }).type(password, { log: false })
         .get('button', { log: false }).click({ log: false }) // form submission
+        .url({ log: false}).should('match', '/', { log: false })
+        .then(function() {
+            log.snapshot().end()
+        })
 })
