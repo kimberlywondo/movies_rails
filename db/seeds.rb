@@ -1,3 +1,11 @@
+
+# seed user for integration testing
+User.create(
+  email: 'test@cypress.io',
+  password: 'test123'
+)
+
+# seed single movie for user's favorite, watch lists
 Movie.create(
   title: 'Fight Club',
   year: '1999',
