@@ -37,3 +37,23 @@
 //       log.snapshot().end()
 //     })
 // })
+
+Cypress.addParentCommand('login', function(email, password) {
+    var email = 'test@cypress.io'
+    var password = 'test123'
+
+    var log = Cypress.Log.command({
+        name: 'login',
+        message: [email, password],
+        consoleProps: function() {
+            return { email: email,
+                  password: password }
+        }
+    })
+
+    cy.visit('http://localhost:3000/users/sign_in', { log: false })
+        .contains('Log in', { log: false })
+        .get('#user_email', { log: false }).type(email, { log: false })
+        .get('#user_password', { log: false }).type(password, { log: false })
+        .get('button', { log: false }).click({ log: false }) // form submission
+})
