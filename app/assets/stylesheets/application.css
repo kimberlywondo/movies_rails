@@ -14,7 +14,11 @@
  *= require_self
  */
 
+
+/* app wide */
 body {
+    background-image: url('wallpaper15.jpg');
+    background-size: 100%;
     padding-top: 50px;
 }
 
@@ -22,15 +26,49 @@ body {
     margin: 20px;
 }
 
+
+/* login form */
+.login-form {
+    width: 50%;
+    margin: 50px auto;
+    line-height: 175%;
+    text-align: center;
+    background: transparent;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 55%;
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 5%;
+}
+
+.login-form input[type="submit"] {
+    margin-top: 1.5rem;
+}
+
+.form-remember-me {
+    display: none;
+}
+
+
+/* other stuff */
+
 .search-results-list {
     list-style-type: none;
 }
 
+/* thumbnail */
+
+
 .thumbnail {
-    float: left;
     max-height: 500px;
     width: 350px;
+    float: left;
     text-align: center;
+    background: transparent;
 }
 
 .thumbnail img {
@@ -55,6 +93,7 @@ body {
 .detail-container {
     height: 500px;
     width: 100%;
+    background: transparent;
 }
 .detail-image-container {
     float: left;
@@ -70,40 +109,7 @@ body {
 }
 
 
-/* form */
+/* save movie form */
 form {
     display: inline;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
