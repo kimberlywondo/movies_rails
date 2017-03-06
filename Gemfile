@@ -24,6 +24,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'httparty'
 gem 'awesome_print'
+group :development do
+  gem "better_errors"
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

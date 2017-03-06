@@ -18,6 +18,90 @@ body {
     padding-top: 50px;
 }
 
+.yield-container {
+    margin: 20px;
+}
+
 .search-results-list {
     list-style-type: none;
 }
+
+.thumbnail {
+    float: left;
+    max-height: 500px;
+    width: 350px;
+    text-align: center;
+}
+
+.thumbnail img {
+    height: 300px;
+}
+
+.plot-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.caption h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+/* movie details page */
+
+.detail-container {
+    height: 500px;
+    width: 100%;
+}
+.detail-image-container {
+    float: left;
+    margin-right: 30px;
+}
+
+.detail-text-container {
+    width: 75%;
+}
+
+.detail-text-container h4 {
+    margin: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
