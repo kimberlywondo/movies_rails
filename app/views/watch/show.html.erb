@@ -1,19 +1,24 @@
- <div class="movie-show-container">
-          <h4 id="movie-title"><%= @movie.title %></h4>
-          <img src="<%= @movie.poster %>" alt="">
-          <div class="movie-deets">
-            <span><%= @movie.year %></span>
-            <span><%= @movie.rated %></span>
-            <span><%= @movie.runtime %></span>
-            <h4><%= @movie.genre %></h4>
-            <h4><%= @movie.plot %></h4>
-            <h4>Directed by: <%= @movie.director %></h4>
-            <h4>Written by: <%= @movie.writer %></h4>
-            <h4>Cast: <%= @movie.actors %></h4>
-            <h4><%= @movie.awards %></h4>
-          </div>
-          <div class="movie-show-btn">
-            <p><a href="/watch" class="btn btn-primary" role="button">All Movies</a>
-              <a href="/watch/remove/<%= @movie.id %>" class="btn btn-danger" role="button">Remove Movie</a></p>
-          </div>
- </div>
+<div class="detail-container">
+  <div class="detail-image-container">
+    <img src="<%= @movie.poster %>" alt="<%= @movie.title %>" class="detail-image">
+  </div>
+
+  <div class="detail-text-container">
+    <h1><%= @movie.title %><br>
+      <h2>
+        <%= @movie.year %>
+        <%= @movie.rated %>
+        <%= @movie.runtime %>
+      </h2><br>
+      <div class="detail-plot-container">
+        <p><%= @movie.plot %></p>
+      </div><br>
+      <h4>Cast: <%= @movie.actors %></h4>
+      <h4>Director: <%= @movie.director %></h4>
+      <h4>Written By: <%= @movie.writer %></h4>
+      <h4>Genre: <%= @movie.genre %></h4>
+      <h4>Awards: <%= @movie.awards %></h4>
+      <p><a href="/watch/" class="btn btn-primary" role="button">Back</a>
+        <a href="/watch/remove/<%= @movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
+  </div>
+</div>

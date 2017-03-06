@@ -6,7 +6,8 @@
           <div class="caption">
             <h3><%= movie.title %> <small><%= movie.year %></small></h3>
             <p class="plot-container"><%= movie.plot %></p>
-            <p><a href="/movies/<%= movie.id %>" class="btn btn-primary" role="button">Details</a></p>
+            <p><a href="/watch/<%= movie.id %>" class="btn btn-primary" role="button">View Details</a>
+              <a href="/watch/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
           </div>
         </div>
       </div>
