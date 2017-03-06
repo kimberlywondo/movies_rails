@@ -1,3 +1,4 @@
+
 describe('initial page load', function() {
     beforeEach(function() {
         cy.visit('http://localhost:3000')
@@ -7,7 +8,12 @@ describe('initial page load', function() {
         cy.title().should('eq', 'Movies: Rails')
     })
 
-    it('should redirect to user login', function() {
+    it('should have links to sign up, login', function() {
+        cy.get('.navbar-right').should('contain', 'Sign up')
+        cy.get('.navbar').contains('Login')
+    })
+
+    it('should auto-redirect to user login', function() {
         cy.request({ url: '/', followRedirect: false })
             .then(function(response) {
                 expect(response.status).to.eq(302)
@@ -17,20 +23,69 @@ describe('initial page load', function() {
 })
 
 
-describe('login attempts', function() {
-    it('should notify user of failed login', function() {
+describe('verify sign up form', function() {
+    before(function() {
+        cy.visit('http://localhost:3000/users/sign_up')
+    })
+
+    it('should have form title', function() {
+        cy.get('h2').should('contain', 'Sign up')
+    })
+
+    it('should have complete sign up form', function() {
+        cy.get('#new_user').within(function() {
+            cy.get('#user_email').should('exist')
+                .get('#user_password').should('exist')
+                .get('#user_password_confirmation').should('exist')
+                .get('input[type="submit"]').should('exist')
+        })
+        cy.get('a').should('contain', 'Log in')
+    })
+})
+
+
+describe('verify login form', function() {
+    before(function() {
+        cy.visit('http://localhost:3000/users/sign_up')
+    })
+
+    it('should have form title', function() {
+        cy.get('h2').should('contain', 'Sign up')
+    })
+
+    it('should have complete sign up form', function() {
+        cy.get('#new_user').within(function() {
+            cy.get('#user_email').should('exist')
+                .get('#user_password').should('exist')
+                .get('#user_password_confirmation').should('exist')
+                .get('input[type="submit"]').should('exist')
+        })
+        cy.get('a').should('contain', 'Log in')
+    })
+})
+
+
+describe('failed login attempt', function() {
+    it('should fail login (with notification)', function() {
+        // no user exists
         cy.login('fail@cypress.io', 'fail123')
         cy.get('.navbar-link')
             .should('contain', 'Invalid Email or password.')
     })
+})
 
-    it('should notify user of successful login', function() {
+
+describe('successful login', function() {
+    it('should validate login (with notification)', function() {
+        // valid username and password
         cy.login('test@cypress.io', 'test123')
         cy.get('.navbar-link')
             .should('contain', 'Signed in successfully.')
     })
 })
 
+
+// search functionality next
 
 
 
@@ -39,7 +94,7 @@ describe('login attempts', function() {
 
 /*
 unsure of how to directly POST to login without an
-authenticity token and still validate 401 Unauthorized response
+authenticity_token and still validate '401 Unauthorized' response
 */
 
 // describe('invalid login attempt', function() {
