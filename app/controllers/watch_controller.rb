@@ -17,7 +17,7 @@ class WatchController < ApplicationController
   def create
     @movie = Movie.create(movie_params)
     if @movie.save
-      redirect_to movies_path
+      redirect_to '/watch'
     else
       render :search
     end
