@@ -70,8 +70,10 @@ body {
 }
 
 
-
-
+/* form */
+form {
+    display: inline;
+}
 
 
 
