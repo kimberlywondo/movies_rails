@@ -1,13 +1,25 @@
-<div class="row">
-  <div class="col-sm-6 col-md-6">
-        <div class="thumbnail">
-          <img src="<%= @movie.poster %>" alt="">
-          <div class="caption">
-            <h3><%= @movie.title %> <small><%= @movie.year %></small></h3>
-            <p><%= @movie.plot %></p>
-            <p><a href="/movies" class="btn btn-primary" role="button">All Favorites</a>
-              <a href="/movies/remove/<%= @movie.id %>" class="btn btn-danger" role="button">Remove from Favorites</a></p>
-          </div>
-        </div>
+<div class="detail-container">
+  <div class="detail-image-container">
+    <img src="<%= @movie.poster %>" alt="<%= @movie.title %>" class="detail-image">
+  </div>
+
+  <div class="detail-text-container">
+    <h1><%= @movie.title %>
+      <br>
+    <h2>
+      <%= @movie.year %>
+      <%= @movie.rated %>
+      <%= @movie.runtime %>
+    </h2>
+      <br>
+    <div class="detail-plot-container">
+      <p><%= @movie.plot %></p>
+    </div>
+      <br>
+    <h4>Cast: <%= @movie.actors %></h4>
+    <h4>Director: <%= @movie.director %></h4>
+    <h4>Written By: <%= @movie.writer %></h4>
+    <h4>Genre: <%= @movie.genre %></h4>
+    <h4>Awards: <%= @movie.awards %></h4>
   </div>
 </div>

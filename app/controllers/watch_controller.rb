@@ -30,6 +30,14 @@ class WatchController < ApplicationController
     end
   end
 
+  # modal test
+  def test
+    @show_partial = false
+    if @show_partial
+      render :test
+    end
+  end
+
   private
   def movie_params
     params.permit(:title, :rated, :released, :runtime, :genre,
