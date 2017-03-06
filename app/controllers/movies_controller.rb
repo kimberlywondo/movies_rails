@@ -41,7 +41,7 @@ class MoviesController < ApplicationController
     if !api_result["Title"]
       redirect_to :search
     end
-    @movie_results = api_result
+    @movie = api_result
   end
 
 
