@@ -15,7 +15,7 @@ describe('initial page load', function() {
                 .should('contain', 'Watch List')
         })
         cy.get('.navbar-right').contains('Sign up')
-        cy.get('.navbar').contains('Login')
+        cy.get('.navbar-right').contains('Login')
     })
 
     it('should auto-redirect to user login', function() {
@@ -33,7 +33,7 @@ describe('verify sign up form', function() {
         cy.visit('http://localhost:3000/users/sign_up')
     })
 
-    it('should have form title', function() {
+    it('should have a form title', function() {
         cy.get('h2').should('contain', 'Sign up')
     })
 
