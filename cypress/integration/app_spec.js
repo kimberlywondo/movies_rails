@@ -8,8 +8,13 @@ describe('initial page load', function() {
         cy.title().should('eq', 'Movies: Rails')
     })
 
-    it('should have links to sign up, login', function() {
-        cy.get('.navbar-right').should('contain', 'Sign up')
+    it('should have navigation links', function() {
+        cy.get('.nav').within(function() {
+            cy.get('li')
+                .should('contain', 'Favorites')
+                .should('contain', 'Watch List')
+        })
+        cy.get('.navbar-right').contains('Sign up')
         cy.get('.navbar').contains('Login')
     })
 
@@ -46,21 +51,20 @@ describe('verify sign up form', function() {
 
 describe('verify login form', function() {
     before(function() {
-        cy.visit('http://localhost:3000/users/sign_up')
+        cy.visit('http://localhost:3000/users/sign_in')
     })
 
-    it('should have form title', function() {
-        cy.get('h2').should('contain', 'Sign up')
-    })
-
-    it('should have complete sign up form', function() {
+    it('should have complete login form', function() {
         cy.get('#new_user').within(function() {
             cy.get('#user_email').should('exist')
                 .get('#user_password').should('exist')
-                .get('#user_password_confirmation').should('exist')
                 .get('input[type="submit"]').should('exist')
         })
-        cy.get('a').should('contain', 'Log in')
+    })
+
+    it('should have links to sign up', function() {
+        cy.get('a').contains('Sign up')
+        cy.get('a').contains('Forgot your password?')
     })
 })
 
@@ -86,8 +90,46 @@ describe('successful login', function() {
 
 
 // search functionality next
+describe('search for movie', function() {
+    beforeEach(function() {
+        cy.visit('http://localhost:3000')
+        cy.login('test@cypress.io', 'test123')
+        cy.visit('http://localhost:3000/search')
+    })
+
+    it('should perform search for "Fight Club"', function() {
+        // perform search for 'Fight Club'
+        cy.get('#form_input').type('Fight Club')
+            .get('#form_submit').click()
+    })
+
+    it('should render results page', function() {
+        cy.get('#form_input').type('Fight Club')
+            .get('#form_submit').click()
+        cy.url().should('eq', 'http://localhost:3000/results')
+    })
+})
 
 
+describe('display results', function() {
+    beforeEach(function() {
+        cy.visit('http://localhost:3000')
+        cy.login('test@cypress.io', 'test123')
+        cy.visit('http://localhost:3000/search')
+        cy.get('#form_input').type('Fight Club')
+            .get('#form_submit').click()
+    })
+
+    it('should contain correct movie', function() {
+        cy.get('.detail-container').should('exist')
+            .within(function() {
+                cy.get('h1').should('exist')
+                    .contains('Fight Club')
+                cy.get('#favorite-form').should('exist')
+                cy.get('#watch-form').should('exist')
+            })
+    })
+})
 
 
 

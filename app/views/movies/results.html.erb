@@ -23,7 +23,7 @@
         <h4>Awards: <%= @movie["Awards"] %></h4>
 
         <!-- favorite -->
-        <form action="/movies" method="post">
+        <form action="/movies" method="post" id="favorite-form">
           <input type="hidden" name="title" value="<%= @movie["Title"] %>">
           <input type="hidden" name="year" value="<%= @movie["Year"] %>">
           <input type="hidden" name="rated" value="<%= @movie["Rated"] %>">
@@ -44,7 +44,7 @@
         </form>
 
         <!-- watch -->
-        <form action="/watch" method="post">
+        <form action="/watch" method="post" id="watch-form">
           <input type="hidden" name="title" value="<%= @movie["Title"] %>">
           <input type="hidden" name="year" value="<%= @movie["Year"] %>">
           <input type="hidden" name="rated" value="<%= @movie["Rated"] %>">
