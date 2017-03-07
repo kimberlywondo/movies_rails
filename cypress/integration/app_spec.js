@@ -70,8 +70,13 @@ describe('verify login form', function() {
 
 
 describe('failed login attempt', function() {
+    it('should redirect back to login if form is empty', function() {
+        cy.visit('http://localhost:3000/users/sign_in')
+        cy.get('input[type="submit"]').click()
+        cy.get('li').should('contain', 'Invalid Email or password.')
+    })
     it('should fail login (with notification)', function() {
-        // no user exists
+        // cy.login() function is defined in commands.js
         cy.login('fail@cypress.io', 'fail123')
         cy.get('.navbar-link')
             .should('contain', 'Invalid Email or password.')
@@ -81,7 +86,6 @@ describe('failed login attempt', function() {
 
 describe('successful login', function() {
     it('should validate login (with notification)', function() {
-        // valid username and password
         cy.login('test@cypress.io', 'test123')
         cy.get('.navbar-link')
             .should('contain', 'Signed in successfully.')
@@ -91,21 +95,13 @@ describe('successful login', function() {
 
 // search functionality next
 describe('search for movie', function() {
-    beforeEach(function() {
-        cy.visit('http://localhost:3000')
-        cy.login('test@cypress.io', 'test123')
-        cy.visit('http://localhost:3000/search')
-    })
-
     it('should perform search for "Fight Club"', function() {
-        // perform search for 'Fight Club'
-        cy.get('#form_input').type('Fight Club')
-            .get('#form_submit').click()
+        // cy.login() function is defined in commands.js
+        cy.search('Fight Club')
     })
 
     it('should render results page', function() {
-        cy.get('#form_input').type('Fight Club')
-            .get('#form_submit').click()
+        cy.search('Fight Club')
         cy.url().should('eq', 'http://localhost:3000/results')
     })
 })
@@ -113,11 +109,7 @@ describe('search for movie', function() {
 
 describe('display results', function() {
     beforeEach(function() {
-        cy.visit('http://localhost:3000')
-        cy.login('test@cypress.io', 'test123')
-        cy.visit('http://localhost:3000/search')
-        cy.get('#form_input').type('Fight Club')
-            .get('#form_submit').click()
+        cy.search('Fight Club')
     })
 
     it('should contain correct movie', function() {
