@@ -1,6 +1,7 @@
 class WatchController < ApplicationController
   # allows for auth. bypass for dev environment
   skip_before_action :verify_authenticity_token
+  before_filter :disable_nav, only: [:watch_page]
 
   def index
     @movies = Movie.where(user_id: current_user.id).where(watch: true)

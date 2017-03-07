@@ -1,0 +1,23 @@
+<div class="detail-container">
+  <h1><%= @movie.title %></h1><br>
+
+  <div class="detail-image-container">
+    <img src="<%= @movie.poster %>" alt="<%= @movie.title %>" class="detail-image">
+  </div>
+
+  <div class="detail-text-container">
+    <h2>
+      <%= @movie.year %>
+      <%= @movie.rated %>
+      <%= @movie.runtime %>
+    </h2>
+    <br>
+    <p><%= @movie.plot %></p>
+    <br>
+    <section><strong>Cast: </strong><%= @movie.actors %></section>
+    <section><strong>Director: </strong><%= @movie.director %></section>
+    <section><strong>Written By: </strong><%= @movie.writer %></section>
+    <section><strong>Genre: </strong><%= @movie.genre %></section>
+    <section><strong>Awards: </strong><%= @movie.awards %></section>
+  </div>
+</div>
