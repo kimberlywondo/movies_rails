@@ -17,7 +17,8 @@
 
 /* app wide */
 body {
-    background-image: url('wallpaper15.jpg');
+    /*background-image: url('wallpaper15.jpg');*/
+    background-color: #111;
     background-size: 100%;
     padding-top: 50px;
 }
@@ -60,32 +61,55 @@ body {
     list-style-type: none;
 }
 
-/* thumbnail */
+/* WATCH / MOVIES INDEX */
 
-
-.thumbnail {
-    max-height: 500px;
-    width: 350px;
-    float: left;
-    text-align: center;
-    background: transparent;
+figure img {
+    width: 100%;
+    margin-top: 30px;
 }
 
-.thumbnail img {
-    height: 300px;
+figure {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+figcaption {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #1d2434;
+    font-size: 20px;
+    padding: 10px 20px;
+    opacity: 0;
+    bottom: 0;
+    left: -30%;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+
+figcaption h4 {
+    color: #9d9d9d;
+}
+
+figure:hover figcaption {
+    opacity: 1;
+}
+
+.cap-bot figcaption {
+    left: 0;
+    bottom: -30%;
+}
+
+.cap-bot:hover figcaption {
+    bottom: 0;
 }
 
 .plot-container {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.caption h4 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
 }
 
 /* movie details page */

@@ -1,15 +1,15 @@
 <div class="row">
   <% @movies.each do |movie| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
+      <div class="col-sm-6 col-md-3">
+        <figure class="cap-bot">
           <img src="<%= movie.poster %>" alt="">
-          <div class="caption">
-            <h3><%= movie.title %> <small><%= movie.year %></small></h3>
-            <p class="plot-container"><%= movie.plot %></p>
-            <p><a href="/movies/<%= movie.id %>" class="btn btn-primary" role="button">View Details</a>
+          <figcaption class="caption">
+            <h4><%= movie.title %> <small><%= movie.year %></small></h4>
+            <!-- <p class="plot-container"><%= movie.plot %></p> -->
+              <%= link_to "Details", watch_path(movie), class: "btn btn-default", role: "button" %>
               <a href="/movies/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
-          </div>
-        </div>
+          </figcaption>
+        </figure>
       </div>
   <% end %>
 </div>
