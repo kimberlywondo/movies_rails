@@ -1,6 +1,7 @@
 class WatchController < ApplicationController
   # allows for auth. bypass for dev environment
   skip_before_action :verify_authenticity_token
+  # TODO this was for rendering "show" view in modal --- might use later
   before_filter :disable_nav, only: [:watch_page]
 
   def index
