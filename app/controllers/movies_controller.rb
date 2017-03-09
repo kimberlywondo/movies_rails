@@ -40,6 +40,7 @@ class MoviesController < ApplicationController
     api_result = HTTParty.get("http://www.omdbapi.com/?t=#{params[:title]}&plot=long&r=json")
     if !api_result["Title"]
       redirect_to :search
+      # TODO -- add else statement -if search isn't completed return an error or redirect to a different page
     end
     @movie = api_result
   end

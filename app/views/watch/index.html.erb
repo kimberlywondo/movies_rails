@@ -1,11 +1,11 @@
+<!-- WATCH LIST -->
 <div class="row">
   <% @movies.each do |movie| %>
     <div class="col-sm-6 col-md-3">
       <figure class="cap-bot">
         <img src="<%= movie.poster %>" alt="">
-          <figcaption class="caption">
+          <figcaption>
             <h4><%= movie.title %> <small><%= movie.year %></small></h4>
-            <!-- <p class="plot-container"><%= movie.plot %></p> -->
               <%= link_to "Details", watch_path(movie), class: "btn btn-default", role: "button" %>
               <a href="/watch/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
         </figcaption>

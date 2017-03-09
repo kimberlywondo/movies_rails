@@ -16,6 +16,74 @@
 
 
 /* app wide */
+/* 12-column responsive grid */
+
+.row {
+    clear: both;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+[class^="col-"] {
+    float: left;
+    margin: 0 3.84615384615% 0 0;
+    list-style: none;
+    position: relative;
+}
+
+[class^="col-"]:last-child {
+    margin: 0;
+}
+
+.col-1 { width: 4.8076923077% }
+.col-2 { width: 13.4615384615% }
+.col-3 { width: 22.1153846154% }
+.col-4 { width: 30.7692307692% }
+.col-5 { width: 39.4230769231% }
+.col-6 { width: 48.0769230769% }
+.col-7 { width: 56.7307692308% }
+.col-8 { width: 65.3846153846% }
+.col-9 { width: 74.0384615385% }
+.col-10 { width: 82.6923076923% }
+.col-11 { width: 91.3461538462% }
+.col-12 { width: 100%; margin: 0 }
+
+/* Mobile styles go first, without media queries. */
+
+@media only screen and (min-width: 321px) {
+    /* Larger mobile styles (wider than 320 pixels) */
+    .list_item {
+  		width: 50%; /* 2 items per row */
+  	}
+}
+
+@media only screen and (min-width: 600px) {
+    /* Tablet styles (wider than 600 pixels) */
+    .list_item {
+  		width: 50%; /* 2 items per row */
+  	}
+}
+
+@media only screen and (min-width: 1024px) {
+    /* Large laptop styles (wider than 1024 pixels) */
+    .list_item {
+  		width: 33.333%; /* 3 items per row */
+  	}
+}
+
+@media only screen and (min-width: 1140px) {
+    /* Desktop styles (wider than 1140 pixels) */
+    .list_item {
+      width: 25%; /* 4 items per row */
+    }
+}
+
+
+/* keep chrome from turning input fields yellow */
+#form_input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
 body {
     /*background-image: url('wallpaper15.jpg');*/
     background-color: #111;
@@ -25,147 +93,4 @@ body {
 
 .yield-container {
     margin: 20px;
-}
-
-
-/* login form */
-.login-form {
-    width: 50%;
-    margin: 50px auto;
-    line-height: 175%;
-    text-align: center;
-    background: transparent;
-}
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
-    width: 55%;
-    text-align: center;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 5%;
-}
-
-.login-form input[type="submit"] {
-    margin-top: 1.5rem;
-}
-
-.form-remember-me {
-    display: none;
-}
-
-
-/* other stuff */
-
-.search-results-list {
-    list-style-type: none;
-}
-
-/* WATCH / MOVIES INDEX */
-
-figure img {
-    width: 100%;
-    margin-top: 30px;
-}
-
-figure {
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-
-figcaption {
-    position: absolute;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    color: #1d2434;
-    font-size: 20px;
-    padding: 10px 20px;
-    opacity: 0;
-    bottom: 0;
-    left: -30%;
-    -webkit-transition: all 0.6s ease;
-    -moz-transition: all 0.6s ease;
-    -o-transition: all 0.6s ease;
-}
-
-figcaption h4 {
-    color: #9d9d9d;
-}
-
-figure:hover figcaption {
-    opacity: 1;
-}
-
-.cap-bot figcaption {
-    left: 0;
-    bottom: -30%;
-}
-
-.cap-bot:hover figcaption {
-    bottom: 0;
-}
-
-.plot-container {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* movie details page */
-
-.detail-container {
-    height: 565px;
-    width: 75%;
-    background: transparent;
-    /*background-color: rgba(0, 0, 0, .5);*/
-    border: 2px solid black;
-    border-radius: 5px;
-    color: black;
-    margin: auto;
-}
-
-.detail-container h1 {
-    background-color: #222;
-    height: 50px;
-    line-height: 50px;
-    vertical-align: middle;
-    text-align: center;
-    color: #9d9d9d;
-    margin: 20px auto 5px auto;
-
-}
-
-.detail-image-container {
-    float: left;
-    margin-right: 30px;
-    margin-left: 20px;
-}
-
-.detail-text-container {
-    margin-right: 20px;
-}
-
-.detail-text-container h2 {
-    margin-top: 10px;
-}
-
-.detail-text-container section {
-    margin: 4px;
-    padding: 5px;
-    font-size: 16px;
-}
-
-.detail-buttons {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* save movie form */
-form {
-    display: inline;
-}
-
-.detail-image {
-    height: 450px;
 }

@@ -1,3 +1,139 @@
 // Place all the styles related to the Movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* login form */
+.login-form {
+    width: 50%;
+    margin: 50px auto;
+    line-height: 175%;
+    text-align: center;
+    background: transparent;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 55%;
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 5%;
+}
+
+.login-form input[type="submit"] {
+    margin-top: 1.5rem;
+}
+
+.form-remember-me {
+    display: none;
+}
+
+
+/* other stuff */
+
+.search-results-list {
+    list-style-type: none;
+}
+
+/* FAVORITES & WATCH LIST INDEX */
+.list_item {
+	width: 25%;
+	float: left;
+}
+
+.list_item_inner img {
+	width: 100%;
+}
+
+figure {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+figcaption {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #1d2434;
+    font-size: 20px;
+    padding: 10px 20px;
+    opacity: 0;
+    bottom: 0;
+    left: -30%;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+
+figcaption h4 {
+    color: #9d9d9d;
+}
+
+figure:hover figcaption {
+    opacity: 1;
+}
+
+.cap-bot figcaption {
+    left: 0;
+    bottom: -30%;
+}
+
+.cap-bot:hover figcaption {
+    bottom: 0;
+}
+
+/* movie details page */
+
+.detail-container {
+    height: 565px;
+    width: 75%;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    margin: auto;
+}
+
+.detail-container h1 {
+    background-color: #222;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    color: #9d9d9d;
+    margin: 20px auto 5px auto;
+}
+
+.detail-image-container {
+    float: left;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.detail-text-container {
+    margin-right: 20px;
+}
+
+.detail-text-container h2 {
+    margin-top: 10px;
+}
+
+.detail-text-container section {
+    margin: 4px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.detail-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* save movie form */
+form {
+    display: inline;
+}
+
+.detail-image {
+    // height: 450px;
+}

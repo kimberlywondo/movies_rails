@@ -2,20 +2,21 @@
     <h1>Please search for a movie!</h1>
 <% else %>
     <div class="detail-container">
+      <h1><%= @movie["Title"] %></h1>
+<br>
       <div class="detail-image-container">
         <img src="<%= @movie["Poster"] %>" alt="<%= @movie["Title"] %>" class="detail-image">
       </div>
 
       <div class="detail-text-container">
-        <h1><%= @movie["Title"] %><br></h1>
         <h2>
           <%= @movie["Year"] %>
           <%= @movie["Rated"] %>
           <%= @movie["Runtime"] %>
-        </h2><br>
-        <div class="detail-plot-container">
+        </h2>
+<br>
           <p><%= @movie["Plot"] %></p>
-        </div><br>
+<br>
         <h4>Cast: <%= @movie["Actors"] %></h4>
         <h4>Director: <%= @movie["Director"] %></h4>
         <h4>Written By: <%= @movie["Writer"] %></h4>
