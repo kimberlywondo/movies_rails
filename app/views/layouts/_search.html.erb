@@ -1,10 +1,8 @@
-<%= form_tag(results_path, method: 'post', class: 'navbar-form', role: "search") do %>
-  <div class="input-group">
-    <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Search', type: "text", name: "title", id: "form_input" %>
-    <div class="input-group-btn">
-      <%= button_tag(class: 'btn btn-default', :name => nil, id: "form_submit") do %>
-        <i class="glyphicon glyphicon-search"></i>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+<div class="search-container">
+  <%= form_tag(results_path, class: "navbar-search", method: 'post', role: "search") do %>
+        <%= search_field_tag 'search', nil, class: 'search-input', placeholder: 'Search', type: "text", name: "title" %>
+        <%= button_tag(type: "submit", id: "form_submit", class: "search-btn") do %>
+          <i class="material-icons">search</i>
+        <% end %>
+    <% end %>
+</div>

@@ -1,18 +1,18 @@
 <!-- FAVORITES -->
+<h1>FAVORITES</h1>
 <div class="list">
   <% @movies.each do |movie| %>
     <div class="list_item">
-        <figure class="list_item_inner">
-          <div class="cap-bot">
-            <img src="<%= movie.poster %>">
-            <figcaption>
-              <h4><%= movie.title %> <small><%= movie.year %></small></h4>
-              <%= link_to "Details", watch_path(movie), class: "btn btn-default", role: "button" %>
-              <a href="/movies/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
-            </figcaption>
-          </div>
-        </figure>
+      <figure class="list_item_inner">
+        <div class="cap-bot">
+          <img src="<%= movie.poster %>">
+          <figcaption>
+            <h4><%= movie.title %> <small><%= movie.year %></small></h4>
+            <%= link_to "Details", watch_path(movie), class: "btn btn-default", role: "button" %>
+            <a href="/movies/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
+          </figcaption>
+        </div>
+      </figure>
     </div>
   <% end %>
-
 </div>

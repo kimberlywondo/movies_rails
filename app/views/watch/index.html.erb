@@ -1,14 +1,17 @@
 <!-- WATCH LIST -->
-<div class="row">
+<h1>WATCH LIST</h1>
+<div class="list">
   <% @movies.each do |movie| %>
-    <div class="col-sm-6 col-md-3">
-      <figure class="cap-bot">
-        <img src="<%= movie.poster %>" alt="">
+    <div class="list_item">
+      <figure class="list_item_inner">
+        <div class="cap-bot">
+          <img src="<%= movie.poster %>">
           <figcaption>
             <h4><%= movie.title %> <small><%= movie.year %></small></h4>
-              <%= link_to "Details", watch_path(movie), class: "btn btn-default", role: "button" %>
-              <a href="/watch/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
-        </figcaption>
+            <%= link_to "Details", watch_path(movie), class: "btn btn-default", role: "button" %>
+            <a href="/watch/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
+          </figcaption>
+        </div>
       </figure>
     </div>
   <% end %>

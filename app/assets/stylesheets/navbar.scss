@@ -1,0 +1,30 @@
+// SEARCH BOX
+.search-container {
+  width: 200px;
+  // height: 25px;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+.navbar-search {
+  padding: 0 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .search-input, .search-btn {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    height: 100%;
+    background: transparent;
+  }
+
+  .search-btn {
+    flex: 0 0 auto;
+    margin-left: 5px;
+  }
+}
