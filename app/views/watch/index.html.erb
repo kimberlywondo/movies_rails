@@ -1,5 +1,10 @@
 <!-- WATCH LIST -->
 <h1>WATCH LIST</h1>
+<% if @movies.count == 0 %>
+	<p id="watchlist-message">It looks like you haven't added anything to your Watch List...
+    <br />
+    Use the search box to get strated!</p>
+<% else %>
 <div class="list">
   <% @movies.each do |movie| %>
     <div class="list_item">
@@ -23,3 +28,4 @@
     </div>
   <% end %>
 </div>
+<% end %>
