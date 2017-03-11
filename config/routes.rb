@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   post '/results', to: 'movies#results'
   get  '/results', to: 'movies#results'
 
-  get '/movies/remove/:id', to: 'movies#remove'
-  get '/watch/remove/:id', to: 'watch#remove'
 end

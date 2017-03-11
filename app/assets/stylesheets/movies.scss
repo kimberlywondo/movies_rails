@@ -67,19 +67,8 @@ figcaption {
 
 figcaption h4 {
     color: #cdcdcd;
-    height: 50%;
-}
-
-figcaption .index-btns {
-    color: #cdcdcd;
-    height: 50%;
-}
-
-#detail-btn {
-  float: left;
-}
-#remove-btn {
-  float: right;
+    font-size: 24px;
+    //TODO add overflow
 }
 
 figure:hover figcaption {

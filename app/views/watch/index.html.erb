@@ -5,13 +5,18 @@
     <div class="list_item">
       <figure class="list_item_inner">
         <div class="cap-bot">
-          <img src="<%= movie.poster %>">
+          <%= image_tag(movie.poster) %>
           <figcaption>
             <h4><%= movie.title %> <small><%= movie.year %></small></h4>
-            <p>
-              <%= link_to "Details", watch_path(movie), class: "btn", role: "button", id: "detail-button" %>
-              <a href="/watch/remove/<%= movie.id %>" class="btn" role="button" id="remove-btn">Remove</a>
-            </p>
+            <div class="index-btns">
+              <%= link_to "Details", watch_path(movie), class: "btn", role: "button", id: "detail-btn" %>
+              <%= link_to(watch_path(movie),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn") do %>
+                      <i class="material-icons">delete_forever</i>
+                    <% end %>
+<!-- TODO  watch_path and movie_path are same, one of these routes/controllers can be removed, use if statement in controller to redirect accordingly -->
+            </div>
           </figcaption>
         </div>
       </figure>
