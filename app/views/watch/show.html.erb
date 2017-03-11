@@ -1,13 +1,15 @@
 <!-- FAVORITES -->
+<div class="show-container">
 <div class="detail-container">
   <%= render "layouts/show" %>
   <%= link_to "Remove from favorites", movie_path(@movie),
           method: :delete,
-          data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn" %>
+          data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-favorites-btn" %>
 </div>
 
 <div class="back-container">
   <%= link_to(movies_path, class: "btn", role: "button", id: "back-btn") do %>
   <i class="material-icons">arrow_back</i>
   <% end %>
+</div>
 </div>

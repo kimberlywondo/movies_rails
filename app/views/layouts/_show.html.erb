@@ -1,5 +1,4 @@
-<!-- <div class="detail-container"> -->
-  <h2><%= @movie.title %></h2><br>
+<h2><%= @movie.title.upcase %></h2><br>
 
   <div class="detail-image-container">
     <%= image_tag @movie.poster, class: "detail-image"%>
@@ -14,10 +13,9 @@
     <br>
     <p><%= @movie.plot %></p>
     <br>
-    <section><strong>Cast: </strong><%= @movie.actors %></section>
-    <section><strong>Director: </strong><%= @movie.director %></section>
-    <section><strong>Written By: </strong><%= @movie.writer %></section>
-    <section><strong>Genre: </strong><%= @movie.genre %></section>
-    <section><strong>Awards: </strong><%= @movie.awards %></section>
+    <section><strong>Cast: </strong><br /><%= @movie.actors %></section>
+    <section><strong>Director: </strong><br /><%= @movie.director %></section>
+    <section><strong>Written By: </strong><br /><%= @movie.writer %></section>
+    <section><strong>Genre: </strong><br /><%= @movie.genre %></section>
+    <section><strong>Awards: </strong><br /><%= @movie.awards %></section>
   </div>
-<!-- </div> -->

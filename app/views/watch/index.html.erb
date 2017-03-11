@@ -12,7 +12,7 @@
         <div class="cap-bot">
           <%= image_tag(movie.poster) %>
           <figcaption>
-            <h4><%= movie.title %> <small><%= movie.year %></small></h4>
+            <h4><%= movie.title.upcase %> <small><%= movie.year %></small></h4>
             <div class="index-btns">
               <%= link_to "Details", watch_path(movie), class: "btn", role: "button", id: "detail-btn" %>
               <%= link_to(watch_path(movie),
