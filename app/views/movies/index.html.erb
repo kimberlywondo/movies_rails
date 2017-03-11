@@ -8,8 +8,10 @@
           <img src="<%= movie.poster %>">
           <figcaption>
             <h4><%= movie.title %> <small><%= movie.year %></small></h4>
-            <%= link_to "Details", watch_path(movie), class: "btn btn-default", role: "button" %>
-            <a href="/movies/remove/<%= movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
+            <p>
+              <%= link_to "Details", watch_path(movie), class: "btn", role: "button", id: "detail-button"  %>
+              <a href="/movies/remove/<%= movie.id %>" class="btn" role="button" id="remove-btn">Remove</a>
+            </p>
           </figcaption>
         </div>
       </figure>

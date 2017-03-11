@@ -11,10 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require_navbar
  *= require_self
  */
 
-
+ @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+ @import url(http://fonts.googleapis.com/css?family=Bitter:400);
 /* app wide */
 /* 12-column responsive grid */
 
@@ -93,4 +95,65 @@ body {
 
 .yield-container {
     margin: 20px;
+}
+
+
+
+.container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+html,body {
+	height:100%;
+    /*background:center no-repeat fixed url('https://snap-photos.s3.amazonaws.com/img-thumbs/960w/BGRA0KYCD8.jpg');*/
+    background-size: cover;
+    color:#444;
+    font-family: 'Lato', sans-serif;
+}
+
+@media (min-width:768px) {
+    h1 {
+        font-size:42px;
+        text-align: center;
+        color: #cdcdcd;
+    }
+}
+
+
+
+a {
+    color:#999;
+}
+
+a:hover {
+    color:#FFFFFF;
+}
+
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+
+  color: #cdcdcd;
+  background: #2b2b2b;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #404040;
+  text-decoration: none;
+}
+
+.text-danger, a.text-danger {
+    color: #F4263C;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.bitter {
+    font-family: 'Bitter', serif;
 }
