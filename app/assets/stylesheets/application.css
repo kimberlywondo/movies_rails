@@ -164,6 +164,7 @@ a {
   background: #2b2b2b;
   padding: 10px 10px 10px 10px;
   text-decoration: none;
+  border: 2px solid #cdcdcd;
 }
 
 .btn:hover {

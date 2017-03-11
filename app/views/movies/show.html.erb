@@ -1,5 +1,14 @@
+<!-- WATCH LIST -->
+<div class="detail-container">
 <%= render "layouts/show" %>
-  <div class="show-buttons">
-      <p><a href="/movies/" class="btn btn-primary" role="button">Back</a>
-        <a href="/movies/remove/<%= @movie.id %>" class="btn btn-danger" role="button">Remove</a></p>
-  </div>
+<%= link_to "remove from watch list", watch_path(movie),
+        method: :delete,
+        data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn" %>
+</div>
+
+<!-- TODO make sure delete redirects to watch correctl!-->
+
+      <!-- <a href="/movies/" class="btn btn-primary" role="button">Back</a> -->
+      <%= link_to(watch_index_path, class: "btn", role: "button", id: "detail-btn") do %>
+      <i class="material-icons">arrow_back</i>
+      <% end %>
