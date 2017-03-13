@@ -7,18 +7,9 @@ $(document).ready(function(){
         }
     });
     $('.list .list_item').height(highestBox);
-
-    // $(window).resize(function() {
-    // var highestBox = 0;
-    //     $('.list .list_item').each(function(){
-    //             if($(this).height() > highestBox){
-    //             highestBox = $(this).height();
-    //     }
-    // });
-    // $('.list .list_item').height(highestBox);
-    // });
-
 });
 
+$(window).load(highestBox);
+$(window).resize(highestBox);
 
 // TODO fix navbar jquery (window resize)and width

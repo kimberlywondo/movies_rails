@@ -9,7 +9,7 @@
           <figcaption>
             <h4><%= movie.title.upcase %> <small><%= movie.year %></small></h4>
             <div>
-              <%= link_to "Details", watch_path(movie), class: "btn", role: "button", id: "detail-btn"  %>
+              <%= link_to "Details", movie_path(movie), class: "btn", role: "button", id: "detail-btn"  %>
               <%= link_to(movie_path(movie),
                       method: :delete,
                       data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn") do %>
