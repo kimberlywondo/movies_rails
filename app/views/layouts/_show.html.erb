@@ -1,21 +1,31 @@
 <h2><%= @movie.title.upcase %></h2><br>
 
-  <div class="detail-image-container">
+<div class="detail-image-container">
     <%= image_tag @movie.poster, class: "detail-image"%>
-  </div>
+</div>
 
-  <div class="detail-text-container">
+<div class="detail-text-container">
     <h3>
-      <%= @movie.year %>
-      <%= @movie.rated %>
-      <%= @movie.runtime %>
+        <%= @movie.year %>
+        <%= @movie.rated %>
+        <%= @movie.runtime %>
     </h3>
     <br>
     <p><%= @movie.plot %></p>
     <br>
-    <section><strong>CAST: </strong><br /><%= @movie.actors %></section>
-    <section><strong>DIRECTOR: </strong><br /><%= @movie.director %></section>
-    <section><strong>WRITTEN BY: </strong><br /><%= @movie.writer %></section>
-    <section><strong>GENRE: </strong><br /><%= @movie.genre %></section>
-    <section><strong>AWARDS: </strong><br /><%= @movie.awards %></section>
-  </div>
+    <section>
+        <strong>CAST:
+        </strong><br/><%= @movie.actors %></section>
+    <section>
+        <strong>DIRECTOR:
+        </strong><br/><%= @movie.director %></section>
+    <section>
+        <strong>WRITTEN BY:
+        </strong><br/><%= @movie.writer %></section>
+    <section>
+        <strong>GENRE:
+        </strong><br/><%= @movie.genre %></section>
+    <section>
+        <strong>AWARDS:
+        </strong><br/><%= @movie.awards %></section>
+</div>

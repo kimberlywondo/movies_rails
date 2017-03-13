@@ -11,5 +11,3 @@ $(document).ready(function(){
 
 $(window).load(highestBox);
 $(window).resize(highestBox);
-
-// TODO fix navbar jquery (window resize)and width

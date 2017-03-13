@@ -1,14 +1,11 @@
 <!-- FAVORITES -->
 <div class="detail-container">
-<%= render "layouts/show" %>
-<%= link_to "remove from favorites", movie_path(@movie),
+    <%= render "layouts/show" %>
+    <%= link_to "remove from favorites", movie_path(@movie),
         method: :delete,
         data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn" %>
 </div>
 
-<!-- TODO make sure delete redirects to watch correctl!-->
-
-      <!-- <a href="/movies/" class="btn btn-primary" role="button">Back</a> -->
-      <%= link_to(movies_path, class: "btn", role: "button", id: "detail-btn") do %>
-      <i class="material-icons">arrow_back</i>
-      <% end %>
+<%= link_to(movies_path, class: "btn", role: "button", id: "detail-btn") do %>
+  <i class="material-icons">arrow_back</i>
+<% end %>

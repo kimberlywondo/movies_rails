@@ -1,6 +1,6 @@
 <div class="search-container">
-  <%= form_tag(results_path, class: "navbar-search", method: 'post', role: "search") do %>
-        <%= search_field_tag 'search', nil, class: 'search-input', placeholder: 'Search', type: "text", name: "title" %>
+    <%= form_tag(results_path, class: "navbar-search", method: 'post', role: "search") do %>
+      <%= search_field_tag 'search', nil, class: 'search-input', placeholder: 'Search', type: "text", name: "title" %>
         <%= button_tag(type: "submit", id: "form_submit", class: "search-btn") do %>
           <i class="material-icons">search</i>
         <% end %>

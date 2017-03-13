@@ -1,70 +1,75 @@
 <% if !@movie["Title"] %>
-    <h1>Please search for a movie!</h1>
+  <h1>Please search for a movie!</h1>
 <% else %>
-    <div class="detail-container">
-      <h1><%= @movie["Title"] %></h1>
-<br>
-      <div class="detail-image-container">
-        <img src="<%= @movie["Poster"] %>" alt="<%= @movie["Title"] %>" class="detail-image">
-      </div>
+  <div class="detail-container">
+    <h1><%= @movie["Title"] %></h1>
+    <br>
+    <div class="detail-image-container">
+        <img src="<%= @movie[" Poster"] %>" alt="<%= @movie[" Title"] %>" class="detail-image">
+    </div>
 
-      <div class="detail-text-container">
+    <div class="detail-text-container">
         <h2>
-          <%= @movie["Year"] %>
-          <%= @movie["Rated"] %>
-          <%= @movie["Runtime"] %>
+            <%= @movie["Year"] %>
+            <%= @movie["Rated"] %>
+            <%= @movie["Runtime"] %>
         </h2>
-<br>
-          <p><%= @movie["Plot"] %></p>
-<br>
-        <h4>Cast: <%= @movie["Actors"] %></h4>
-        <h4>Director: <%= @movie["Director"] %></h4>
-        <h4>Written By: <%= @movie["Writer"] %></h4>
-        <h4>Genre: <%= @movie["Genre"] %></h4>
-        <h4>Awards: <%= @movie["Awards"] %></h4>
+        <br>
+        <p><%= @movie["Plot"] %></p>
+        <br>
+        <h4>Cast:
+            <%= @movie["Actors"] %></h4>
+        <h4>Director:
+            <%= @movie["Director"] %></h4>
+        <h4>Written By:
+            <%= @movie["Writer"] %></h4>
+        <h4>Genre:
+            <%= @movie["Genre"] %></h4>
+        <h4>Awards:
+            <%= @movie["Awards"] %></h4>
 
         <!-- favorite -->
         <form action="/movies" method="post" id="favorite-form">
-          <input type="hidden" name="title" value="<%= @movie["Title"] %>">
-          <input type="hidden" name="year" value="<%= @movie["Year"] %>">
-          <input type="hidden" name="rated" value="<%= @movie["Rated"] %>">
-          <input type="hidden" name="runtime" value="<%= @movie["Runtime"] %>">
-          <input type="hidden" name="genre" value="<%= @movie["Genre"] %>">
-          <input type="hidden" name="director" value="<%= @movie["Director"] %>">
-          <input type="hidden" name="writer" value="<%= @movie["Writer"] %>">
-          <input type="hidden" name="actors" value="<%= @movie["Actors"] %>">
-          <input type="hidden" name="plot" value="<%= @movie["Plot"] %>">
-          <input type="hidden" name="awards" value="<%= @movie["Awards"] %>">
-          <input type="hidden" name="poster" value="<%= @movie["Poster"] %>">
-          <input type="hidden" name="rating" value="<%= @movie["Rating"] %>">
-          <input type="hidden" name="user_id" value="<%= current_user.id %>">
-          <input type="hidden" name="favorites" value="true">
-          <input type="hidden" name="watch" value="false">
+            <input type="hidden" name="title" value="<%= @movie[" Title"] %>">
+            <input type="hidden" name="year" value="<%= @movie[" Year"] %>">
+            <input type="hidden" name="rated" value="<%= @movie[" Rated"] %>">
+            <input type="hidden" name="runtime" value="<%= @movie[" Runtime"] %>">
+            <input type="hidden" name="genre" value="<%= @movie[" Genre"] %>">
+            <input type="hidden" name="director" value="<%= @movie[" Director"] %>">
+            <input type="hidden" name="writer" value="<%= @movie[" Writer"] %>">
+            <input type="hidden" name="actors" value="<%= @movie[" Actors"] %>">
+            <input type="hidden" name="plot" value="<%= @movie[" Plot"] %>">
+            <input type="hidden" name="awards" value="<%= @movie[" Awards"] %>">
+            <input type="hidden" name="poster" value="<%= @movie[" Poster"] %>">
+            <input type="hidden" name="rating" value="<%= @movie[" Rating"] %>">
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">
+            <input type="hidden" name="favorites" value="true">
+            <input type="hidden" name="watch" value="false">
 
-          <input type="submit" value="Add to Favorites" class="btn btn-primary" role="button">
+            <input type="submit" value="Add to Favorites" class="btn btn-primary" role="button">
         </form>
 
         <!-- watch -->
         <form action="/watch" method="post" id="watch-form">
-          <input type="hidden" name="title" value="<%= @movie["Title"] %>">
-          <input type="hidden" name="year" value="<%= @movie["Year"] %>">
-          <input type="hidden" name="rated" value="<%= @movie["Rated"] %>">
-          <input type="hidden" name="runtime" value="<%= @movie["Runtime"] %>">
-          <input type="hidden" name="genre" value="<%= @movie["Genre"] %>">
-          <input type="hidden" name="director" value="<%= @movie["Director"] %>">
-          <input type="hidden" name="writer" value="<%= @movie["Writer"] %>">
-          <input type="hidden" name="actors" value="<%= @movie["Actors"] %>">
-          <input type="hidden" name="plot" value="<%= @movie["Plot"] %>">
-          <input type="hidden" name="awards" value="<%= @movie["Awards"] %>">
-          <input type="hidden" name="poster" value="<%= @movie["Poster"] %>">
-          <input type="hidden" name="rating" value="<%= @movie["Rating"] %>">
-          <input type="hidden" name="user_id" value="<%= current_user.id %>">
-          <input type="hidden" name="favorites" value="false">
-          <input type="hidden" name="watch" value="true">
+            <input type="hidden" name="title" value="<%= @movie[" Title"] %>">
+            <input type="hidden" name="year" value="<%= @movie[" Year"] %>">
+            <input type="hidden" name="rated" value="<%= @movie[" Rated"] %>">
+            <input type="hidden" name="runtime" value="<%= @movie[" Runtime"] %>">
+            <input type="hidden" name="genre" value="<%= @movie[" Genre"] %>">
+            <input type="hidden" name="director" value="<%= @movie[" Director"] %>">
+            <input type="hidden" name="writer" value="<%= @movie[" Writer"] %>">
+            <input type="hidden" name="actors" value="<%= @movie[" Actors"] %>">
+            <input type="hidden" name="plot" value="<%= @movie[" Plot"] %>">
+            <input type="hidden" name="awards" value="<%= @movie[" Awards"] %>">
+            <input type="hidden" name="poster" value="<%= @movie[" Poster"] %>">
+            <input type="hidden" name="rating" value="<%= @movie[" Rating"] %>">
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">
+            <input type="hidden" name="favorites" value="false">
+            <input type="hidden" name="watch" value="true">
 
-          <input type="submit" value="Add to Watch List" class="btn btn-primary" role="button">
+            <input type="submit" value="Add to Watch List" class="btn btn-primary" role="button">
         </form>
 
-      </div>
     </div>
+  </div>
 <% end %>

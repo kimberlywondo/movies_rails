@@ -2,30 +2,32 @@
 <h1>WATCH LIST</h1>
 <% if @movies.count == 0 %>
 	<p id="watchlist-message">It looks like you haven't added anything to your Watch List...
-    <br />
-    Use the search box to get started!</p>
+	<br/>
+	Use the search box to get started!</p>
 <% else %>
-<div class="list">
-  <% @movies.each do |movie| %>
-    <div class="list_item">
-      <figure class="list_item_inner">
-        <div class="cap-bot">
-          <%= image_tag(movie.poster) %>
-          <figcaption>
-            <h4><%= movie.title.upcase %> <small><%= movie.year %></small></h4>
-            <div class="index-btns">
-              <%= link_to "Details", watch_path(movie), class: "btn", role: "button", id: "detail-btn" %>
-              <%= link_to(watch_path(movie),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn") do %>
-                      <i class="material-icons">delete_forever</i>
-                    <% end %>
-<!-- TODO  watch_path and movie_path are same, one of these routes/controllers can be removed, use if statement in controller to redirect accordingly -->
-            </div>
-          </figcaption>
-        </div>
-      </figure>
-    </div>
-  <% end %>
-</div>
+	<div class="list">
+	<% @movies.each do |movie| %>
+	<div class="list_item">
+		<figure class="list_item_inner">
+			<div class="cap-bot">
+				<%= image_tag(movie.poster) %>
+				<figcaption>
+					<h4><%= movie.title.upcase %>
+						<small><%= movie.year %></small>
+					</h4>
+					<div class="index-btns">
+						<%= link_to "Details", watch_path(movie), class: "btn", role: "button", id: "detail-btn" %>
+						<%= link_to(watch_path(movie),
+	                    method: :delete,
+	                    data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn") do %>
+							  <i class="material-icons">delete_forever</i>
+						<% end %>
+						<!-- TODO  watch_path and movie_path are same, one of these routes/controllers can be removed, use if statement in controller to redirect accordingly -->
+					</div>
+				</figcaption>
+			</div>
+		</figure>
+	</div>
+	<% end %>
+	</div>
 <% end %>

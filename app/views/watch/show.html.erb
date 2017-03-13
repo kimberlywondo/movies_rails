@@ -1,17 +1,17 @@
 <!-- WATCH LIST-->
 <div class="show-container">
-<div class="detail-container">
-  <%= render "layouts/show" %>
-  <div class="remove-btn-container">
-  <%= link_to "Remove from watch list", movie_path(@movie),
+  <div class="detail-container">
+    <%= render "layouts/show" %>
+    <div class="remove-btn-container">
+      <%= link_to "Remove from watch list", movie_path(@movie),
           method: :delete,
           data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-favorites-btn" %>
-</div>
-</div>
+    </div>
+  </div>
 
-<div class="back-container">
-  <%= link_to(watch_index_path, class: "btn", role: "button", id: "back-btn") do %>
-  <i class="material-icons">arrow_back</i>
-  <% end %>
-</div>
+  <div class="back-container">
+    <%= link_to(watch_index_path, class: "btn", role: "button", id: "back-btn") do %>
+      <i class="material-icons">arrow_back</i>
+    <% end %>
+  </div>
 </div>

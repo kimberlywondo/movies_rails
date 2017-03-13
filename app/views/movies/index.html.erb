@@ -1,25 +1,27 @@
 <!-- FAVORITES -->
 <h1>FAVORITES</h1>
 <div class="list">
-  <% @movies.each do |movie| %>
+    <% @movies.each do |movie| %>
     <div class="list_item">
-      <figure class="list_item_inner">
-        <div class="cap-bot">
-          <%= image_tag(movie.poster) %>
-          <figcaption>
-            <h4><%= movie.title.upcase %> <small><%= movie.year %></small></h4>
-            <div>
-              <%= link_to "Details", movie_path(movie), class: "btn", role: "button", id: "detail-btn"  %>
-              <%= link_to(movie_path(movie),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn") do %>
-                      <i class="material-icons">delete_forever</i>
-                    <% end %>
-<!-- TODO  watch_path and movie_path are same one of these routes/controllers can be removed -->
+        <figure class="list_item_inner">
+            <div class="cap-bot">
+                <%= image_tag(movie.poster) %>
+                <figcaption>
+                    <h4><%= movie.title.upcase %>
+                        <small><%= movie.year %></small>
+                    </h4>
+                    <div>
+                        <%= link_to "Details", movie_path(movie), class: "btn", role: "button", id: "detail-btn"  %>
+                        <%= link_to(movie_path(movie),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' }, class: "btn", role: "button", id: "remove-btn") do %>
+                            <i class="material-icons">delete_forever</i>
+                        <% end %>
+                        <!-- TODO  watch_path and movie_path are same one of these routes/controllers can be removed -->
+                    </div>
+                </figcaption>
             </div>
-          </figcaption>
-        </div>
-      </figure>
+        </figure>
     </div>
-  <% end %>
+    <% end %>
 </div>
