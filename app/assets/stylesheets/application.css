@@ -56,6 +56,7 @@
     /* Larger mobile styles (wider than 320 pixels) */
     .list_item {
   		width: 50%; /* 2 items per row */
+      margin-bottom: 0px;
   	}
     h1 {
         font-size:22px;
@@ -71,7 +72,8 @@
 @media only screen and (min-width: 600px) {
     /* Tablet styles (wider than 600 pixels) */
     .list_item {
-  		width: 50%; /* 2 items per row */
+  		width: 33.333%; /* 2 items per row */
+      margin-bottom: 0px;
   	}
     h1 {
         font-size:28px;
@@ -88,6 +90,7 @@
     /* Large laptop styles (wider than 1024 pixels) */
     .list_item {
   		width: 33.333%; /* 3 items per row */
+      margin-bottom: 0px;
   	}
     h1 {
         font-size:32px;
@@ -104,6 +107,7 @@
     /* Desktop styles (wider than 1140 pixels) */
     .list_item {
       width: 25%; /* 4 items per row */
+      margin-bottom: 0px;
     }
     h1 {
         font-size:38px;
