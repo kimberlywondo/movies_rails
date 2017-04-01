@@ -7,7 +7,11 @@
     margin: 50px auto;
     line-height: 175%;
     text-align: center;
-    background: transparent;
+    background: rgba(205, 205, 205, 0);
+}
+
+.login-form .field, h2{
+    color: rgba(153, 153, 153, 1);
 }
 
 .login-form input[type="email"],
@@ -15,8 +19,9 @@
     width: 55%;
     text-align: center;
     border: none;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(205, 205, 205, 0);
     border-radius: 5%;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
 .login-form input[type="submit"] {

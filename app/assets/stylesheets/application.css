@@ -56,6 +56,7 @@
     /* Larger mobile styles (wider than 320 pixels) */
     .list_item {
   		width: 50%; /* 2 items per row */
+      height: auto;
       margin-bottom: 0px;
   	}
     h1 {
